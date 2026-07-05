@@ -17,6 +17,7 @@ style:
     active: false # TODO/FIXME comments are allowed; they are tracked in PRs
   MagicNumber:
     ignorePropertyDeclaration: true # token values (dp/sp scales) are literal by nature
+    ignoreAnnotated: ['Immutable'] # token classes are literal by nature; covers factory bodies too
 
 naming:
   FunctionNaming:

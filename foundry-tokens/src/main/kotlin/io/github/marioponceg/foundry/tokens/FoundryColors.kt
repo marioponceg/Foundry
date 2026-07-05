@@ -47,7 +47,6 @@ public class FoundryColors(
 ) {
     public companion object {
         /** Forja dark: molten gold on obsidian. */
-        @Suppress("MagicNumber")
         public fun dark(): FoundryColors = FoundryColors(
             background = Color(0xFF0E1013),
             onBackground = Color(0xFFECE5D3),
@@ -73,7 +72,6 @@ public class FoundryColors(
         )
 
         /** Forja light: ink on parchment. */
-        @Suppress("MagicNumber")
         public fun light(): FoundryColors = FoundryColors(
             background = Color(0xFFF4EDDE),
             onBackground = Color(0xFF2A2418),
