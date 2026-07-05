@@ -25,3 +25,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Foundry"
 include(":catalog")
+include(":foundry-tokens")
