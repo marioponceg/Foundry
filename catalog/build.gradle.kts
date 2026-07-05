@@ -1,9 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
-    namespace = "io.github.marioponceg.foundry"
+    namespace = "io.github.marioponceg.foundry.catalog"
     compileSdk {
         version = release(37) {
             minorApiLevel = 0
@@ -11,13 +12,11 @@ android {
     }
 
     defaultConfig {
-        applicationId = "io.github.marioponceg.foundry"
+        applicationId = "io.github.marioponceg.foundry.catalog"
         minSdk = 26
         targetSdk = 37
         versionCode = 1
-        versionName = "1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        versionName = "0.1.0"
     }
 
     buildTypes {
@@ -27,17 +26,19 @@ android {
             }
         }
     }
+    buildFeatures {
+        compose = true
+    }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 }
 
 dependencies {
-    implementation(libs.androidx.appcompat)
+    implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.core.ktx)
-    implementation(libs.material)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(libs.androidx.junit)
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.ui.tooling.preview)
 }

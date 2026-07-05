@@ -23,4 +23,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Foundry"
-include(":app")
+include(":catalog")
