@@ -67,7 +67,7 @@ Any design decision **not** listed above must be raised with the maintainer befo
 
 ## Commit & branching conventions
 
-- **Conventional Commits** for every commit: `feat:`, `fix:`, `chore:`, `docs:`, `refactor:`, `ci:`, `build:` …
+- **Conventional Commits** for every commit: `feat:`, `fix:`, `chore:`, `docs:`, `test:`, `refactor:`, `ci:`, `build:` …
 - **Trunk-based workflow**: `main` is protected by a repository ruleset — PR required (no
   direct pushes), force-pushes and deletion blocked, CI and PR-title checks must pass. All
   work happens on short-lived feature branches (`feature/<topic>`) merged via PR.
