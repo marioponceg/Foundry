@@ -1,0 +1,23 @@
+# Detekt configuration for Foundry.
+# Builds upon the default ruleset (buildUponDefaultConfig = true in the convention plugin),
+# so this file only contains deliberate deviations from the defaults.
+
+build:
+  maxIssues: 0 # fail the build on any unresolved issue
+
+formatting:
+  active: true
+  android: true
+  autoCorrect: true
+  FunctionName:
+    active: false # composables are PascalCase; covered by naming>FunctionNaming below
+
+style:
+  ForbiddenComment:
+    active: false # TODO/FIXME comments are allowed; they are tracked in PRs
+  MagicNumber:
+    ignorePropertyDeclaration: true # token values (dp/sp scales) are literal by nature
+
+naming:
+  FunctionNaming:
+    ignoreAnnotated: ['Composable', 'Test'] # PascalCase composables, backtick test names

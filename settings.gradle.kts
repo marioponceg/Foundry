@@ -1,4 +1,5 @@
 pluginManagement {
+    includeBuild("build-logic")
     repositories {
         google {
             content {
@@ -23,4 +24,6 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Foundry"
-include(":app")
+include(":catalog")
+include(":foundry-tokens")
+include(":foundry-components")
