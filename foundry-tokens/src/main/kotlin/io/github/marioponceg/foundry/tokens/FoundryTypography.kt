@@ -14,7 +14,6 @@ import androidx.compose.ui.unit.sp
  * fantasy voice); body roles stay on the system sans for density and legibility.
  */
 @Immutable
-@Suppress("LongParameterList")
 public class FoundryTypography(
     public val display: TextStyle,
     public val title: TextStyle,

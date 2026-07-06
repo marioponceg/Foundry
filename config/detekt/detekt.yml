@@ -9,6 +9,12 @@ formatting:
   FunctionName:
     active: false # composables are PascalCase; covered by naming>FunctionNaming below
 
+complexity:
+  LongParameterList:
+    # Token classes and composables take many named parameters by design (an M3
+    # ColorScheme has ~30); the rule keeps protecting regular functions.
+    ignoreAnnotated: ['Immutable', 'Composable']
+
 style:
   ForbiddenComment:
     active: false # TODO/FIXME comments are allowed; they are tracked in PRs

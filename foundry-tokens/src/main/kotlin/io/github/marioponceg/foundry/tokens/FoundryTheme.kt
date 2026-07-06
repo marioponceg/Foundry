@@ -29,7 +29,6 @@ private val LocalFoundryShapes = staticCompositionLocalOf<FoundryShapes> {
  * palette or extend rarity by constructing a custom [FoundryColors].
  */
 @Composable
-@Suppress("LongParameterList")
 public fun FoundryTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     colors: FoundryColors = if (darkTheme) FoundryColors.dark() else FoundryColors.light(),
