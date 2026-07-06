@@ -89,10 +89,10 @@ Any design decision **not** listed above must be raised with the maintainer befo
 
 ## v0.1 roadmap
 
-| PR | Design unit |
+| Design unit | Status |
 |---|---|
-| #1 | Tooling: catalog rename, build-logic, module skeletons, CI, AGENTS.md, ruleset (this PR) |
-| #2 | Tokens + FoundryTheme (Roborazzi enters here) |
-| #3 | Catalog base: tokens screen, light/dark toggle |
-| #4–#7 | FoundryText → FoundryButton → FoundryCard → FoundryTextField |
-| #8 | Maven Central publishing + release workflow + README → tag v0.1.0 |
+| Tooling: catalog rename, build-logic, module skeletons, CI, AGENTS.md, ruleset | done (PR #1) |
+| Tokens + FoundryTheme + Roborazzi | done (PR #2) |
+| Catalog base: tokens screen, light/dark toggle | this unit |
+| FoundryText → FoundryButton → FoundryCard → FoundryTextField | one PR each |
+| Maven Central publishing + release workflow + README → tag v0.1.0 | pending |
