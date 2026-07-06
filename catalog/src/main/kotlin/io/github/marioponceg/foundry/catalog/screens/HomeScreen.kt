@@ -8,10 +8,11 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import io.github.marioponceg.foundry.catalog.CatalogDestination
+import io.github.marioponceg.foundry.components.FoundryText
+import io.github.marioponceg.foundry.components.FoundryTextStyle
 import io.github.marioponceg.foundry.tokens.FoundryTheme
 
 /** One row in the catalog's Home list. Component design units append entries. */
@@ -32,6 +33,11 @@ internal val catalogEntries = listOf(
         description = "FoundryText styles, colors and overflow",
         destination = CatalogDestination.Text,
     ),
+    CatalogEntry(
+        title = "Button",
+        description = "FoundryButton variants, states and leading icon",
+        destination = CatalogDestination.Button,
+    ),
 )
 
 @Composable
@@ -50,14 +56,14 @@ internal fun HomeScreen(onOpen: (CatalogDestination) -> Unit) {
                     .clickable { onOpen(entry.destination) }
                     .padding(spacing.md),
             ) {
-                Text(
+                FoundryText(
                     text = entry.title,
-                    style = FoundryTheme.typography.heading,
+                    style = FoundryTextStyle.Heading,
                     color = colors.onSurface,
                 )
-                Text(
+                FoundryText(
                     text = entry.description,
-                    style = FoundryTheme.typography.caption,
+                    style = FoundryTextStyle.Caption,
                     color = colors.onSurfaceMuted,
                 )
             }
