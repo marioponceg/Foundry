@@ -60,6 +60,8 @@ private fun FoundryButtonShowcase() {
             FoundryButton(text = style.name, onClick = {}, style = style)
         }
         FoundryButton(text = "Disabled", onClick = {}, enabled = false)
+        // Robolectric NATIVE renders CircularProgressIndicator as a small glyph, not a full arc —
+        // a known tooling limitation; the golden's contract is "spinner present, no label".
         FoundryButton(text = "Loading", onClick = {}, loading = true)
         FoundryButton(
             text = "With icon",
