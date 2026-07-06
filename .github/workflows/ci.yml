@@ -38,3 +38,6 @@ jobs:
 
       - name: Static analysis (detekt)
         run: ./gradlew detekt
+
+      - name: Screenshot tests (Roborazzi)
+        run: ./gradlew verifyRoborazziDebug

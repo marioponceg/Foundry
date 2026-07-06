@@ -58,11 +58,13 @@ Any design decision **not** listed above must be raised with the maintainer befo
 ```sh
 ./gradlew build      # compiles everything and runs all unit tests + Android Lint
 ./gradlew detekt     # static analysis + formatting (ktlint rules via detekt-formatting)
+./gradlew verifyRoborazziDebug   # screenshot tests against committed goldens
 ```
 
-- Detekt config: `config/detekt/detekt.yml` (builds upon defaults, `maxIssues: 0`).
-- Once Roborazzi lands (tokens design unit): `./gradlew verifyRoborazziDebug` joins this list;
-  golden images are committed and regenerated deliberately with `recordRoborazziDebug`.
+- Detekt config: `config/detekt/detekt.yml` (builds upon defaults; any unresolved issue fails
+  the build — detekt's default since 1.23, no `maxIssues` key needed).
+- Golden images live in `<module>/src/test/screenshots/`; regenerate deliberately with
+  `./gradlew recordRoborazziDebug` and review the diff before committing.
 - A task is not done until these commands pass locally; CI runs the same commands on every PR.
 
 ## Commit & branching conventions
