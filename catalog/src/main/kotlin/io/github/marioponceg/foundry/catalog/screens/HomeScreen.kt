@@ -27,6 +27,11 @@ internal val catalogEntries = listOf(
         description = "Colors, rarity, typography, spacing and shapes",
         destination = CatalogDestination.Tokens,
     ),
+    CatalogEntry(
+        title = "Text",
+        description = "FoundryText styles, colors and overflow",
+        destination = CatalogDestination.Text,
+    ),
 )
 
 @Composable

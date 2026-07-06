@@ -21,12 +21,13 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import io.github.marioponceg.foundry.catalog.screens.HomeScreen
+import io.github.marioponceg.foundry.catalog.screens.TextScreen
 import io.github.marioponceg.foundry.catalog.screens.TokensScreen
 import io.github.marioponceg.foundry.tokens.FoundryTheme
 
 private val DestinationSaver = Saver<CatalogDestination, String>(
-    save = { destination -> if (destination is CatalogDestination.Tokens) "tokens" else "home" },
-    restore = { saved -> if (saved == "tokens") CatalogDestination.Tokens else CatalogDestination.Home },
+    save = { destination -> destination.title },
+    restore = { saved -> CatalogDestination.all.firstOrNull { it.title == saved } ?: CatalogDestination.Home },
 )
 
 @Composable
@@ -47,7 +48,7 @@ internal fun CatalogApp() {
                 .statusBarsPadding(),
         ) {
             CatalogTopBar(
-                title = if (destination is CatalogDestination.Tokens) "Tokens" else "Foundry",
+                title = destination.title,
                 showBack = destination != CatalogDestination.Home,
                 darkTheme = darkTheme,
                 onBack = { destination = CatalogDestination.Home },
@@ -56,6 +57,7 @@ internal fun CatalogApp() {
             when (destination) {
                 CatalogDestination.Home -> HomeScreen(onOpen = { destination = it })
                 CatalogDestination.Tokens -> TokensScreen()
+                CatalogDestination.Text -> TextScreen()
             }
         }
     }
