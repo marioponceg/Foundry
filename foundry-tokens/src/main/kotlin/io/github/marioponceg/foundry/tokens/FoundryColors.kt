@@ -27,7 +27,6 @@ public class RarityColors(
  * enforced by unit tests.
  */
 @Immutable
-@Suppress("LongParameterList")
 public class FoundryColors(
     public val background: Color,
     public val onBackground: Color,
