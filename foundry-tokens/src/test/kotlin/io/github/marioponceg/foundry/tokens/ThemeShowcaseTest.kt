@@ -23,6 +23,7 @@ import org.robolectric.annotation.GraphicsMode
 
 @RunWith(RobolectricTestRunner::class)
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
+// sdk pinned to 35: the highest android-all image Robolectric 4.16 ships (compileSdk is 37).
 @Config(sdk = [35])
 class ThemeShowcaseTest {
 

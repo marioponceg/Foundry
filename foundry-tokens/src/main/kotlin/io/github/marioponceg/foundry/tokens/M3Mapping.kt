@@ -29,6 +29,10 @@ internal fun foundryColorScheme(colors: FoundryColors, darkTheme: Boolean): Colo
     )
 }
 
+/**
+ * Nearest-slot mapping: a few assignments are approximate by design (e.g. bodyStrong ->
+ * bodyMedium, heading -> titleMedium) — M3 has no exact counterpart for those roles.
+ */
 internal fun foundryM3Typography(typography: FoundryTypography): Typography = Typography(
     displaySmall = typography.display,
     titleLarge = typography.title,
