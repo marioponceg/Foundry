@@ -21,6 +21,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import io.github.marioponceg.foundry.catalog.screens.HomeScreen
+import io.github.marioponceg.foundry.catalog.screens.TokensScreen
 import io.github.marioponceg.foundry.tokens.FoundryTheme
 
 private val DestinationSaver = Saver<CatalogDestination, String>(
@@ -54,12 +55,7 @@ internal fun CatalogApp() {
             )
             when (destination) {
                 CatalogDestination.Home -> HomeScreen(onOpen = { destination = it })
-                CatalogDestination.Tokens -> Text(
-                    text = "Tokens screen arrives in the next task",
-                    style = FoundryTheme.typography.body,
-                    color = FoundryTheme.colors.onBackground,
-                    modifier = Modifier.padding(FoundryTheme.spacing.md),
-                )
+                CatalogDestination.Tokens -> TokensScreen()
             }
         }
     }
