@@ -63,22 +63,12 @@ public fun FoundryButton(
         FoundryButtonContent(text = text, loading = loading, leadingIcon = leadingIcon, spacing = spacing)
     }
     when (style) {
-        FoundryButtonStyle.Primary -> Button(
+        FoundryButtonStyle.Primary, FoundryButtonStyle.Destructive -> Button(
             onClick = gatedOnClick,
             modifier = modifier,
             enabled = enabled,
             shape = shape,
-            colors = filledButtonColors(container = colors.accent, content = colors.onAccent, tokens = colors),
-            elevation = null,
-            contentPadding = contentPadding,
-            content = content,
-        )
-        FoundryButtonStyle.Destructive -> Button(
-            onClick = gatedOnClick,
-            modifier = modifier,
-            enabled = enabled,
-            shape = shape,
-            colors = filledButtonColors(container = colors.danger, content = colors.onDanger, tokens = colors),
+            colors = filledButtonColors(style = style, tokens = colors),
             elevation = null,
             contentPadding = contentPadding,
             content = content,
@@ -113,15 +103,23 @@ public fun FoundryButton(
     }
 }
 
-/** Filled-button colors with token-resolved disabled treatment (muted, not M3's default alpha). */
+/**
+ * Filled-button colors for the [FoundryButtonStyle.Primary] / [FoundryButtonStyle.Destructive]
+ * variants, with token-resolved disabled treatment (muted, not M3's default alpha).
+ */
 @Composable
-private fun filledButtonColors(container: Color, content: Color, tokens: FoundryColors): ButtonColors =
-    ButtonDefaults.buttonColors(
+private fun filledButtonColors(style: FoundryButtonStyle, tokens: FoundryColors): ButtonColors {
+    val (container, contentColor) = when (style) {
+        FoundryButtonStyle.Destructive -> tokens.danger to tokens.onDanger
+        else -> tokens.accent to tokens.onAccent
+    }
+    return ButtonDefaults.buttonColors(
         containerColor = container,
-        contentColor = content,
+        contentColor = contentColor,
         disabledContainerColor = tokens.outline,
         disabledContentColor = tokens.onSurfaceMuted,
     )
+}
 
 /**
  * Button content: the spinner while [loading], otherwise the optional [leadingIcon] + label.
