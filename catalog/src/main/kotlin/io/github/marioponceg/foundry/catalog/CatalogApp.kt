@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -20,9 +19,12 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import io.github.marioponceg.foundry.catalog.screens.ButtonScreen
 import io.github.marioponceg.foundry.catalog.screens.HomeScreen
 import io.github.marioponceg.foundry.catalog.screens.TextScreen
 import io.github.marioponceg.foundry.catalog.screens.TokensScreen
+import io.github.marioponceg.foundry.components.FoundryText
+import io.github.marioponceg.foundry.components.FoundryTextStyle
 import io.github.marioponceg.foundry.tokens.FoundryTheme
 
 private val DestinationSaver = Saver<CatalogDestination, String>(
@@ -58,6 +60,7 @@ internal fun CatalogApp() {
                 CatalogDestination.Home -> HomeScreen(onOpen = { destination = it })
                 CatalogDestination.Tokens -> TokensScreen()
                 CatalogDestination.Text -> TextScreen()
+                CatalogDestination.Button -> ButtonScreen()
             }
         }
     }
@@ -80,25 +83,25 @@ private fun CatalogTopBar(
         verticalAlignment = Alignment.CenterVertically,
     ) {
         if (showBack) {
-            Text(
+            FoundryText(
                 text = "Back",
-                style = FoundryTheme.typography.label,
+                style = FoundryTextStyle.Label,
                 color = colors.accent,
                 modifier = Modifier
                     .clickable(onClick = onBack)
                     .padding(end = spacing.md),
             )
         }
-        Text(
+        FoundryText(
             text = title,
-            style = FoundryTheme.typography.title,
+            style = FoundryTextStyle.Title,
             color = colors.onBackground,
             modifier = Modifier.weight(1f),
         )
         Spacer(modifier = Modifier.padding(start = spacing.sm))
-        Text(
+        FoundryText(
             text = if (darkTheme) "Light" else "Dark",
-            style = FoundryTheme.typography.label,
+            style = FoundryTextStyle.Label,
             color = colors.accent,
             modifier = Modifier.clickable(onClick = onToggleTheme),
         )

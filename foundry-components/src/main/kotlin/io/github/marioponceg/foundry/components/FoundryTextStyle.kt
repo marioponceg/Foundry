@@ -49,7 +49,7 @@ public fun FoundryText(
         color = color.takeOrElse { FoundryTheme.colors.onBackground },
         maxLines = maxLines,
         overflow = overflow,
-        textAlign = textAlign ?: TextAlign.Unspecified,
+        textAlign = textAlign,
         style = resolvedStyle,
     )
 }
