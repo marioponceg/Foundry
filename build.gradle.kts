@@ -7,4 +7,7 @@ plugins {
     alias(libs.plugins.compose.compiler) apply false
     alias(libs.plugins.detekt) apply false
     alias(libs.plugins.roborazzi) apply false
+    // maven-publish additionally NEEDS the shared classloader: its Central staging build
+    // service must be one type across sibling modules or publishing fails to configure.
+    alias(libs.plugins.maven.publish) apply false
 }

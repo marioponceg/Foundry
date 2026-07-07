@@ -4,14 +4,26 @@ import org.gradle.accessors.dm.LibrariesForLibs
 /**
  * Convention plugin for Foundry library modules: AGP library with built-in Kotlin
  * (explicit API mode), Compose, detekt (with formatting rules), and the shared
- * Compose/test dependencies. Maven Central publishing joins this plugin in its own
- * design unit (PR #8 of the v0.1 roadmap).
+ * Compose/test dependencies. Maven Central publishing via the vanniktech plugin
+ * (POM metadata resolved from gradle.properties).
  */
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.plugin.compose")
     id("io.gitlab.arturbosch.detekt")
     id("io.github.takahirom.roborazzi")
+    id("com.vanniktech.maven.publish")
+}
+
+mavenPublishing {
+    // Uploads to the Central Portal; actual publication is released manually from
+    // central.sonatype.com (publishing to Maven Central is irreversible by design).
+    publishToMavenCentral()
+    // Signing is mandatory for Maven Central but must not block local publishToMavenLocal:
+    // sign only when the in-memory key is present (always true in the release workflow).
+    if (providers.gradleProperty("signingInMemoryKey").isPresent) {
+        signAllPublications()
+    }
 }
 
 val libs = the<LibrariesForLibs>()
