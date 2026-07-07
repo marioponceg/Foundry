@@ -39,7 +39,7 @@ internal fun CatalogApp() {
     val systemDark = isSystemInDarkTheme()
     var darkTheme by rememberSaveable { mutableStateOf(systemDark) }
     var destination by rememberSaveable(stateSaver = DestinationSaver) {
-        mutableStateOf<CatalogDestination>(CatalogDestination.Home)
+        mutableStateOf(CatalogDestination.Home)
     }
     FoundryTheme(darkTheme = darkTheme) {
         BackHandler(enabled = destination != CatalogDestination.Home) {
