@@ -22,6 +22,7 @@ import androidx.compose.ui.Modifier
 import io.github.marioponceg.foundry.catalog.screens.ButtonScreen
 import io.github.marioponceg.foundry.catalog.screens.CardScreen
 import io.github.marioponceg.foundry.catalog.screens.HomeScreen
+import io.github.marioponceg.foundry.catalog.screens.TextFieldScreen
 import io.github.marioponceg.foundry.catalog.screens.TextScreen
 import io.github.marioponceg.foundry.catalog.screens.TokensScreen
 import io.github.marioponceg.foundry.components.FoundryText
@@ -63,6 +64,7 @@ internal fun CatalogApp() {
                 CatalogDestination.Text -> TextScreen()
                 CatalogDestination.Button -> ButtonScreen()
                 CatalogDestination.Card -> CardScreen()
+                CatalogDestination.TextField -> TextFieldScreen()
             }
         }
     }
