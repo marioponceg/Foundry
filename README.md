@@ -2,7 +2,6 @@
 
 [![Maven Central](https://img.shields.io/maven-central/v/io.github.marioponceg/foundry-components)](https://central.sonatype.com/artifact/io.github.marioponceg/foundry-components)
 [![CI](https://github.com/marioponceg/Foundry/actions/workflows/ci.yml/badge.svg)](https://github.com/marioponceg/Foundry/actions/workflows/ci.yml)
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 
 Design system library for Android built with Jetpack Compose — design tokens, themed components and a consistent visual language, ready to drop into any app.
 
@@ -56,4 +55,4 @@ The `catalog` app is the daily development vehicle and a live showcase of every 
 
 ## License
 
-Foundry is released under the [Apache License 2.0](LICENSE).
+[Apache 2.0](LICENSE)
