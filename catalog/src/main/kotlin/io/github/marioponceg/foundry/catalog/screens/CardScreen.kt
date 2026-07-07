@@ -26,15 +26,27 @@ internal fun CardScreen() {
     ) {
         FoundryCard(modifier = Modifier.fillMaxWidth()) {
             FoundryText(text = "Filled card", style = FoundryTextStyle.Heading, color = colors.onSurface)
-            FoundryText(text = "Container on surface, flat.", style = FoundryTextStyle.Body, color = colors.onSurfaceMuted)
+            FoundryText(
+                text = "Container on surface, flat.",
+                style = FoundryTextStyle.Body,
+                color = colors.onSurfaceMuted,
+            )
         }
         FoundryCard(modifier = Modifier.fillMaxWidth(), style = FoundryCardStyle.Outlined) {
             FoundryText(text = "Outlined card", style = FoundryTextStyle.Heading, color = colors.onSurface)
-            FoundryText(text = "Bordered with the outline token.", style = FoundryTextStyle.Body, color = colors.onSurfaceMuted)
+            FoundryText(
+                text = "Bordered with the outline token.",
+                style = FoundryTextStyle.Body,
+                color = colors.onSurfaceMuted,
+            )
         }
         FoundryCard(modifier = Modifier.fillMaxWidth(), onClick = {}) {
             FoundryText(text = "Clickable card", style = FoundryTextStyle.Heading, color = colors.onSurface)
-            FoundryText(text = "Tap for a whole-card ripple.", style = FoundryTextStyle.Body, color = colors.onSurfaceMuted)
+            FoundryText(
+                text = "Tap for a whole-card ripple.",
+                style = FoundryTextStyle.Body,
+                color = colors.onSurfaceMuted,
+            )
         }
     }
 }
