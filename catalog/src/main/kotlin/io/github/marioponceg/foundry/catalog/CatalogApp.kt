@@ -20,6 +20,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import io.github.marioponceg.foundry.catalog.screens.ButtonScreen
+import io.github.marioponceg.foundry.catalog.screens.CardScreen
 import io.github.marioponceg.foundry.catalog.screens.HomeScreen
 import io.github.marioponceg.foundry.catalog.screens.TextScreen
 import io.github.marioponceg.foundry.catalog.screens.TokensScreen
@@ -61,6 +62,7 @@ internal fun CatalogApp() {
                 CatalogDestination.Tokens -> TokensScreen()
                 CatalogDestination.Text -> TextScreen()
                 CatalogDestination.Button -> ButtonScreen()
+                CatalogDestination.Card -> CardScreen()
             }
         }
     }
