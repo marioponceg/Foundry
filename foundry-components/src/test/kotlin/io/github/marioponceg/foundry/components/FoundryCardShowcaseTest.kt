@@ -60,7 +60,11 @@ private fun FoundryCardShowcase() {
         }
         FoundryCard(modifier = Modifier.fillMaxWidth(), style = FoundryCardStyle.Outlined) {
             FoundryText(text = "Outlined", style = FoundryTextStyle.Heading, color = colors.onSurface)
-            FoundryText(text = "Bordered with the outline token.", style = FoundryTextStyle.Body, color = colors.onSurfaceMuted)
+            FoundryText(
+                text = "Bordered with the outline token.",
+                style = FoundryTextStyle.Body,
+                color = colors.onSurfaceMuted,
+            )
         }
         FoundryCard(modifier = Modifier.fillMaxWidth(), onClick = {}) {
             FoundryText(text = "Clickable", style = FoundryTextStyle.Heading, color = colors.onSurface)
