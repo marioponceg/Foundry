@@ -40,6 +40,11 @@ internal val catalogEntries = listOf(
         description = "FoundryCard filled, outlined and clickable",
         destination = CatalogDestination.Card,
     ),
+    CatalogEntry(
+        title = "Text field",
+        description = "FoundryTextField label, states and multiline",
+        destination = CatalogDestination.TextField,
+    ),
 )
 
 @Composable

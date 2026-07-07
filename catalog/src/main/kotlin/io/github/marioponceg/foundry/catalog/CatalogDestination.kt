@@ -24,8 +24,12 @@ sealed interface CatalogDestination {
         override val title: String = "Card"
     }
 
+    data object TextField : CatalogDestination {
+        override val title: String = "Text field"
+    }
+
     companion object {
         /** All destinations, used to save/restore navigation state robustly. */
-        val all: List<CatalogDestination> = listOf(Home, Tokens, Text, Button, Card)
+        val all: List<CatalogDestination> = listOf(Home, Tokens, Text, Button, Card, TextField)
     }
 }
