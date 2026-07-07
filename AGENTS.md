@@ -93,6 +93,6 @@ Any design decision **not** listed above must be raised with the maintainer befo
 |---|---|
 | Tooling: catalog rename, build-logic, module skeletons, CI, AGENTS.md, ruleset | done (PR #1) |
 | Tokens + FoundryTheme + Roborazzi | done (PR #2) |
-| Catalog base: tokens screen, light/dark toggle | this unit |
-| FoundryText → FoundryButton → FoundryCard → FoundryTextField | one PR each |
-| Maven Central publishing + release workflow + README → tag v0.1.0 | pending |
+| Catalog base: tokens screen, light/dark toggle | done (PR #4) |
+| FoundryText → FoundryButton → FoundryCard → FoundryTextField | done (PR #5–#8) |
+| Maven Central publishing + release workflow + README → tag v0.1.0 | done (PR #9) |
